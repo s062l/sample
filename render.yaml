@@ -1,0 +1,22 @@
+databases:
+  - name: Queen's Closet_DB
+    databaseName: queens_closet_db
+    user: Queen's Closet
+    region: singapore
+
+services:
+  - type: web
+    name: Queen's Closet
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: Queen's Closet_DB
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+
