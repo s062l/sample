@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QueensCloset</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+
+    <div class="snow"><i class="far fa-snowflake"></i></div>
+    <div class="snow2nd"><i class="far fa-snowflake"></i></div>
+
+<script src="https://kit.fontawesome.com/3b0ca05d9d.js" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<link href="https://fonts.googleapis.com/css?family=Vollkorn rel="stylesheet">
+  <body>
+  <header>
+      <h1>Queen's closet</h1>
+      <div class="header-list">
+      <ul>
+        <li><%= link_to "Home", posts_top_path %></li>
+        <li><%= link_to "Brands", posts_path %></li>
+        <% if user_signed_in? %>
+          <li><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'transparent-button' %></li>
+        <% else %>
+          <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+      </ul>
+      </div>
+    </header>
+    <main>
+    <%= yield %>
+  </body>
+</html>

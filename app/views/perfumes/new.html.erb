@@ -1,0 +1,94 @@
+<%= image_tag "image0.jpeg", class:"haikei" %>
+<%= form_for(@perfume, class: 'form-horizontal', role: 'form') do |f| %>
+    <div class="container-sindan">
+    <div class="row">
+          <div class="col-15">
+            <div class="col-12">
+                <p>Question1. 全体の印象は？</p>
+            </div>
+            <div class="radio">
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "1", nil %>体に厚みがあり、肉感的</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "2", nil %>上半身は薄いが、下半身が重く感じる</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "3", nil %>骨がしっかりしていて、肉感的でない</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="col-12">
+                <p>Question2. 鎖骨の特徴は？</p>
+            </div>
+            <div class="radio">
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "1", nil %>さほど目立たない</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "2", nil %>細めの鎖骨が見える</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "3", nil %>しっかり出ていて、骨が太い</p>
+            </div>
+            </div>
+          </div> 
+
+          <div class="col-15">
+            <div class="col-12">
+                <p>Question3. ウエストの特徴は？</p>
+            </div>
+            <div class="radio">
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "1", nil %>くびれがあまりない</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "2", nil %>くびれがわかりやすい</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "3", nil %>どちらでもない</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="col-12">
+                <p>Question4. 太もも、ひざ下の形は？</p>
+            </div>
+            <div class="radio">
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "1", nil %>太ももにハリがあり、膝から下はまっすぐ細め</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "2", nil %>太ももが柔らかで、膝から下がО脚気味</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "3", nil %>太ももが肉感的でなく、スネがしっかりしている</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="col-12">
+                <p>Question5. 手の特徴は？</p>
+            </div>
+            <div class="radio">
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "1", nil %>横から見ると厚めで、指の太さは均一的</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "2", nil %>横から見ると薄めで、指先に向かって細い</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "3", nil %>関節と筋が目立ち、ゴツゴツと感じる</p>
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="sindanbotan">
+        <%= f.submit "診断へ" %>
+    </div>
+<% end %>

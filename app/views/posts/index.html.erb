@@ -1,0 +1,52 @@
+<%= image_tag "thumbnail_IMG_0155.jpeg", class:"indexpage" %>
+<h1>Queen's closet</h1>
+<h3>brandページ</h3>
+<% if user_signed_in? %>
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+<!--
+<%= link_to "新規投稿へ", new_post_path %>
+-->
+<%= link_to "骨格診断",  new_perfume_path %>
+<%= link_to "パーソナルカラー診断",  new_cat_path %>
+<div class="posts-container">
+  <% @posts.each do |t| %>
+    <div class="post">
+      <%= link_to t.user.name, user_path(t.user.id) %>
+      <%= t.user.email %>
+      <%= t.name %>
+      <%= image_tag t.image_url, size: "250x280" if t.image? %>
+      <%= image_tag t.image2_url, size: "250x280" if t.image2? %>
+      <%= image_tag t.image3_url, size: "250x280" if t.image3? %>
+      <%= image_tag t.image4_url, size: "250x280" if t.image4? %>
+      <%= t.detail %>
+      <% if user_signed_in? %>
+      <% if current_user.already_liked?(t) %>
+          <%= button_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+            <i class="fas fa-heart"></i><%= t.likes.count %>
+          <% end %>
+      <% else %>
+          <%= button_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+            <i class="far fa-heart"></i><%= t.likes.count %> 
+          <% end %>
+      <% end %>
+  <% else %>
+  <i class="far fa-heart"></i><%= t.likes.count %>
+  <% end %>
+      <%= link_to "詳細へ", post_path(t.id) %>
+      <% if user_signed_in? && current_user.id == t.user_id %>
+      <!--
+      <%= link_to "編集する", edit_post_path(t.id) %>
+      -->
+      <!--
+      <%= button_to "削除する", post_path(t.id), method: :delete %>
+      -->
+      <% end %> 
+      </div>
+  <% end %>
+  <!--
+  <%= link_to "ログイン", new_user_session_path , class: "button" %>
+  <%= link_to "新規登録", new_user_registration_path , class: "button" %>
+  -->
+  <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+</div>

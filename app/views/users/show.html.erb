@@ -1,0 +1,34 @@
+<%= image_tag "thumbnail_IMG_0155.jpeg", class:"indexpage" %>
+<h1>♡マイページ♡</h1>
+<p>名前 : <%= @user.name %></p>
+<p>メールアドレス : <%= @user.email %></p>
+<!--
+<p>プロフィール : <%= @user.profile %></p>
+-->
+<% if current_user.id == @user.id %>
+<!--
+<%= link_to "編集する", edit_user_registration_path %>
+-->
+<% end %>
+
+<h2>ユーザーの投稿一覧</h2>
+<% @user.posts.each do |t| %>
+  <%= t.user.name %>
+  <%= image_tag t.image_url, size: "250x280" if t.image? %>
+  <%= image_tag t.image2_url, size: "250x280" if t.image2? %>
+  <%= image_tag t.image3_url, size: "250x280" if t.image3? %>
+  <%= image_tag t.image4_url, size: "250x280" if t.image4? %>
+  <%= t.detail %>
+<% end %>
+<h2>いいね一覧</h2>
+<% @user.liked_posts.each do |t| %>
+  <%= t.user.name %>
+  <%= image_tag t.image_url, size: "250x280" if t.image? %>
+  <%= image_tag t.image2_url, size: "250x280" if t.image2? %>
+  <%= image_tag t.image3_url, size: "250x280" if t.image3? %>
+  <%= image_tag t.image4_url, size: "250x280" if t.image4? %>
+  <%= t.detail %>
+<% end %>
+
+
+<%= link_to "Post一覧に戻る", posts_path %>

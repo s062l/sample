@@ -1,0 +1,109 @@
+<%= image_tag "image3", class:"haikei" %>
+<%= form_for(@cat, class: 'form-horizontal', role: 'form') do |f| %>
+    <div class="container-sindan2">
+        <div class="row">
+        <div class="col-15">
+            <div class="col-12">
+                <p>Question1. 瞳の色は？</p>
+            </div>
+            <div class="radio">
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "1", nil %>明るめのブラウン</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "2", nil %>赤みのあるブラウン</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "3", nil %>落ち着きのあるダークブラウン</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "4", nil %>深みのあるブラック</p>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-15">
+            <div class="col-12">
+                <p>Question2.髪（地毛）の色は？</p>
+            </div>
+            <div class="radio">
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "1", nil %>明るめのブラウンの髪</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "2", nil %>深みのある黒に近いブラウンの髪</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "3", nil %>ソフトで柔らかい黒髪</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "4", nil %>艶やかではっきりとした黒髪</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="col-12">
+                <p>Question3. 肌の色は？</p>
+            </div>
+            <div class="radio">
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "1", nil %>明るいアイボリー系</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "2", nil %>オークル系でマットな質感</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "3", nil %>血色の良い明るいピンク系</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "4", nil %>ピンク系の色白肌</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="col-12">
+                <p>Question4. 日焼けすると？</p>
+            </div>
+            <div class="radio">
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "1", nil %>やや赤くなり、その後黒くなる</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "2", nil %>日焼けしやすく、吸収して黒くなる</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "3", nil %>日焼けしやすいが、戻るのも早い</p>
+            </div>
+            <div class="col-6">
+                <p><%= f.check_box :question, {multiple: true}, "4", nil %>赤くなりやすく、すぐに元に戻る</p>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="col-12">
+            <p>Question5. 元の唇の色は？</p>
+            </div>
+            <div class="radio">
+            <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "1", nil %>サーモンピンク、薄いベージュ系</p>
+            </div>
+            <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "2", nil %>落ち着いたオレンジ、ベージュ系</p>
+            </div>
+            <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "3", nil %>ピンク、ローズ系</p>
+            </div>
+            <div class="col-6">
+            <p><%= f.check_box :question, {multiple: true}, "4", nil %>青みのあるローズ系</p>
+            </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="sindanbotan2">
+        <%= f.submit "診断へ" %>
+    </div>
+<% end %>
